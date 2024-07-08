@@ -16,22 +16,9 @@ Qt based cross-platform GUI proxy configuration manager (backend: v2ray / sing-b
 
 [详情 / Detail](/download/#nekoray-nekobox-for-pc)
 
-## Matsuri
+## Google Play
 
-适用于 Android 的 V2Ray 通用代理工具链。
-
-V2Ray / universal proxy toolchain for Android.
-
-[详情 / Detail](/download/#matsuri)
-
-!!! note
-
-    Matsuri 已不活跃，请关注以下类似项目。    
-
-    Matsuri is no longer active, please pay attention to the following similar projects.    
-
-    1. NekoBox for Android
-    2. NekoRay / NekoBox for PC
+Google Play 上的版本是由第三方上传的含广告版本，请不要下载。
 
 ## 更改记录 & 发布频道
 
@@ -62,9 +49,6 @@ USDT TRC20
 XMR
 
 `49bwESYQjoRL3xmvTcjZKHEKaiGywjLYVQJMUv79bXonGiyDCs8AzE3KiGW2ytTybBCpWJUvov8SjZZEGg66a4e59GXa6k5`
-
-* 您也可以通过 [Google Play](https://play.google.com/store/apps/details?id=moe.nb4a) 购买捐赠，另有支付宝微信购买方式，见 TG 频道置顶。
-* Donating via [Google Play](https://play.google.com/store/apps/details?id=moe.nb4a), using credit cards.
 
 ### Telegram Group
 

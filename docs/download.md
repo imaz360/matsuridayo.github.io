@@ -6,8 +6,6 @@
 
 [下载 NekoBox for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
 
-[Google Play (付费)](https://play.google.com/store/apps/details?id=moe.nb4a)
-
 [配置说明 / Configuration](/nb4a-configuration/)
 
 [常见问题 / FAQ](/nb4a-faq/)
@@ -15,8 +13,6 @@
 ### Matsuri
 
 [下载 Matsuri](https://github.com/MatsuriDayo/Matsuri/releases)
-
-[Google Play](https://play.google.com/store/apps/details?id=moe.matsuri.lite)
 
 [配置说明 / Configuration](/m-configuration/)
 
