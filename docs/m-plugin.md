@@ -14,38 +14,12 @@ Github Plugin 仓库
 
 用法：为你需要的协议安装插件。已安装的插件在「关于」页面显示。
 
-目前除了 `Trojan-Go` 和 `NaïveProxy`，其余插件只兼容 `moe.matsuri.*` 版本（具体请以应用内能否正常识别运行为准）
-
-### SagerNet 发布的插件
-
-`io.nekohasekai.sagernet.plugin.*`
-
-- [Trojan-Go Plugin](https://github.com/SagerNet/SagerNet/releases/tag/trojan-go-plugin-0.10.6) （上游不再更新）
-- [NaïveProxy Plugin](https://github.com/SagerNet/SagerNet/releases?q=naive)
-
-### Matsuri 发布的插件
+### 可以使用的插件
 
 `moe.matsuri.exe.*`
 
+- [Naive Plugin](https://github.com/klzgrad/naiveproxy/releases)
 - [Hysteria Plugin](https://github.com/MatsuriDayo/plugins/releases?q=Hysteria)
-- [TUIC(v4) Plugin](https://github.com/MatsuriDayo/plugins/releases/tag/tuic-0.8.5-2) （上游不再更新）
-- [TUIC(v5) Plugin](https://github.com/MatsuriDayo/plugins/releases?q=tuic) （1.2.0 版本后不再使用）
-
-## 高级插件
-
-`moe.matsuri.plugin.*`
-
-Matsuri 原创的功能，允许把协议支持拆分成插件的形式，大部分情况下本体不需要改动。
-
-用法：在 设置 - 高级插件 查看已安装的插件，可以启用或禁用。
-
-高级插件由两部分组成
-
-1. 可以在 Android 上运行的 native 二进制文件，与 SagerNet 的「插件」一致，用于提供协议出口与 socks5 入口。
-2. 可以在 Android Webview 中运行的 HTML JS 文件，用于提供 UI 、分享连接、配置文件生成等功能。
-
-!!! warning "警告"
-    Matsuri + Xray / sing-box plugin 等组合暂时废弃。替代方案为 NekoBox For Android
 
 ## 常见问题：插件已安装，但显示“未找到插件”
 
