@@ -30,7 +30,7 @@ https://t.me/Matsuridayo
 
 !!! warning
 
-    问题反馈请到 GitHub issue 区。请勿滥用邮箱和群组，**否则一律不回或封禁**。
+    问题反馈请到 GitHub issue 区。
     
     For feedback, please go to the GitHub issue.
 
@@ -56,13 +56,7 @@ XMR
 
 https://t.me/nekoray_group
 
-### Email
-
-接广告投放（如果是机场，请由机场主亲自洽谈），接编程项目合作。
-
-请勿发送无意义邮件（比如功能请求），**此类邮件一律不回或拉黑发送者**。
-
-`nekoha_matsuri@protonmail.com`
+商务合作可以在群里说，随缘回复。
 
 ### 推广页
 

@@ -4,6 +4,8 @@
 
 ### NekoBox for Android
 
+项目缓慢更新中。
+
 [下载 NekoBox for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
 
 [配置说明 / Configuration](/nb4a-configuration/)
@@ -11,6 +13,8 @@
 [常见问题 / FAQ](/nb4a-faq/)
 
 ### Matsuri
+
+项目已经存档，不再维护。
 
 [下载 Matsuri](https://github.com/MatsuriDayo/Matsuri/releases)
 
@@ -21,6 +25,8 @@
 ## 电脑
 
 ### NekoRay / NekoBox for PC
+
+项目缓慢更新中。
 
 [下载 / Download](https://github.com/MatsuriDayo/nekoray/releases)
 

@@ -279,3 +279,20 @@ LineageOS 等系统的 VPN 热点功能与前者冲突，需要开启后者。
 检测结果仅供参考，结果可能因网络丢包等原因不准确。
 
 Windows 电脑上可以使用此软件进行 NAT 类型测试： https://github.com/HMBSbige/NatTypeTester
+
+### 自定义配置
+
+自定义配置将被混合进最终的 core 配置。
+
+从 1.3.3 版本起，可以使用以下格式处理列表：
+
+```json
+{
+    "+inbounds": [
+        // 向 inbounds 的头部添加您的对象
+    ],
+    "outbounds+": [
+        // 向 outbounds 的尾部添加您的对象
+    ]
+}
+```
