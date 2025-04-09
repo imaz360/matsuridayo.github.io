@@ -1,13 +1,8 @@
 # NB4A FAQ
 
-## NB4A 和 Matsuri 有什么区别？
+## Nekobox 其他同类软件有什么区别？
 
-- NB4A 使用 sing-box 作为核心，而 Matsuri 使用 V2Ray (v2fly v5) 作为核心。关于两种核心的区别参考 [nekoray 说明](/n-configuration/#nekobox)。
-- Matsuri 已归档，不再更新
-
-## 同类软件
-
-Android 平台上有一些长得很像的软件，实际上界面均修改自 shadowsocks-android，但是使用了不同的核心。它们之间的配置和功能可能有巨大的差别。
+Android 平台上有一些长得很像的软件，实际上界面均修改自 shadowsocks-android，并且互相借鉴。由于使用了不同的核心，它们之间的配置和功能可能有巨大的差别。
 
 ## 如何正确反馈问题
 

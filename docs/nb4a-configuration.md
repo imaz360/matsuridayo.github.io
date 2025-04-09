@@ -2,7 +2,7 @@
 
 这是 NekoBox for Android 的详细说明书，跟随软件更新，**阅读前请保证您使用的是最新版**。
 
-## 协议说明
+## 功能说明
 
 ### 自定义 JSON
 
@@ -31,95 +31,9 @@
 
 如果填写完整配置，则需注意：
 
-- outbound tag 等属性需要与 GUI 生成的配置保持一致 (如 `proxy` `bypass`)， GUI 路由配置等功能失效
+- outbound tag 等属性需要与 GUI 生成的配置保持一致 (如 `proxy` `bypass`)
+- GUI 路由配置等功能失效
 - VPN 相关配置完全由 GUI 控制， tun inbound 只需保持 IP 一致即可 (172.19.0.1/28)
-
-### Shadowsocks
-
-* 如果服务器是 sing-box 则支持 `multiplex` `uot`
-* `multiplex` 与 `uot` 冲突，同时只能开一个
-
-### HTTP
-
-部分情况下与 v2ray 等服务器存在兼容性问题。
-
-### VMess
-
-部分情况下与 v2ray 等服务器存在兼容性问题。
-
-* 对于像 ALPN 这样的列表选项，格式是每行一个。1.1.7 版本后也可以用 `,` 分割。
-
-### Wireguard
-
-* 本地地址 每行一个。 格式如 `10.0.0.1/24` `2001:db8::1/32`
-* 支持 reseved 字段，请填 base64 字符串。
-
-### Hysteria1
-
-对于 sing-box 不支持的类型(比如 wechat-video)，需要安装 Matsuri Hysteria 插件 1.3.3+
-
-#### 端口跳跃
-
-1. (1.2.0之前的旧格式) 需要使用多端口时，「服务器」按照 `example.com:1145,5144-10240` 格式填写，「服务器端口」随意填写。
-2. (1.2.0新格式) 服务器和端口分开填写，端口可以填写字符串，格式： `11451`（单端口）/  `114-514,1919`（多端口）。旧配置自动升级，但不可再写旧的格式。
-3. 不使用多端口时，「服务器」和「服务器端口」按照原来的方式填写。
-4. 不能作为链式代理的非入口节点。
-
-### Hysteria2
-
-Hysteria2 使用 sing-box 内置实现。
-
-### TUIC
-
-因为一些用户报告了被 GFW 封锁，以及使用与维护方面的不便，Tuic v4 v5 Plugin (基于 https://github.com/EAimTY/tuic) 客户端已在 1.2.4 版本被彻底废弃。
-
-#### v5 协议 (1.2.0之后)
-
-无需插件的 TUIC，由 sing-box 实现。
-
-如果需要使用 `udp_over_stream` 一项（场景：可能对某些软件的实时UDP视频串流有帮助），请使用 sing-box 作为 TUIC 服务器。
-
-### ShadowTLS
-
-通常需要与 ShadowSocks 类型服务器组成链式代理才能上网。顺序为 ShadowTLS -> ShadowSocks
-
-sing-box ShadowTLS 与原版的兼容性未知。
-
-### sing-box 私有协议
-
-!!! warning "注意"
-
-    * 这是一些私有协议，通常随 VMess Trojan 等协议使用。
-    * 如果服务器不支持（通常是因为不是 sing-box 或者版本不同），则可能导致无法上网。
-
-按 sing-box 的出站分：
-
-* vmess/vless/trojan: `V2Ray Transport` (http/ws/grpc/quic)
-* vmess/vless: `packetaddr` `xudp`
-* ss/vmess/vless/trojan: `multiplex`
-* ss: `uot`
-
-!!! note
-
-    * ws 地址支持 `?ed=2048` 这种 earlydata 形式（与 Xray 兼容）
-
-### TLS 安全设置
-
-* 允许不安全连接：启用后安全性相当于明文。有些节点不开这个无法使用，原因是服务器证书配置有误。
-* 证书（链）：应填入证书内容，通常是 PEM 格式。
-* 如果 SNI 留空，且 服务器地址 为域名，则使用 服务器地址 填充 SNI。(v2ray & sing-box 行为)
-* 本项目不会使用 ws host 等字段填充 SNI，这可能会使一些客户端（V2RayNG）共享的 ws tls 等配置无法使用，请自行检查。
-
-### TLS 伪装设置
-
-* uTLS
-* Reality (先决条件是开启 uTLS，不支持 SpiderX，ShortId 可留空)
-
-!!! note
-
-    * sing-box Reality 目前与 Xray-core 兼容性欠佳，建议服务器和客户端使用相同的实现。
-
-## 功能说明
 
 ### 导入 / 导出 / 订阅
 
@@ -282,3 +196,89 @@ LineageOS 等系统的 VPN 热点功能与前者冲突，需要开启后者。
 检测结果仅供参考，结果可能因网络丢包等原因不准确。
 
 Windows 电脑上可以使用此软件进行 NAT 类型测试： https://github.com/HMBSbige/NatTypeTester
+
+## 协议说明
+
+### Shadowsocks
+
+* 如果服务器是 sing-box 则支持 `multiplex` `uot`
+* `multiplex` 与 `uot` 冲突，同时只能开一个
+
+### VMess
+
+部分情况下与 v2ray 等服务器存在兼容性问题。
+
+* 对于像 ALPN 这样的列表选项，格式是每行一个。1.1.7 版本后也可以用 `,` 分割。
+
+### Wireguard
+
+* 本地地址 每行一个。 格式如 `10.0.0.1/24` `2001:db8::1/32`
+* 支持 reseved 字段，请填 base64 字符串。
+
+### Hysteria
+
+#### Hysteria1
+
+对于 sing-box 不支持的类型(比如 wechat-video)，需要安装 Matsuri Hysteria 插件 1.3.3+
+
+#### Hysteria2
+
+Hysteria2 使用 sing-box 内置实现。
+
+##### 端口跳跃
+
+1. (1.2.0之前的旧格式) 需要使用多端口时，「服务器」按照 `example.com:1145,5144-10240` 格式填写，「服务器端口」随意填写。
+2. (1.2.0新格式) 服务器和端口分开填写，端口可以填写字符串，格式： `11451`（单端口）/  `114-514,1919`（多端口）。旧配置自动升级，但不可再写旧的格式。
+3. 不使用多端口时，「服务器」和「服务器端口」按照原来的方式填写。
+4. 不能作为链式代理的非入口节点。
+
+### TUIC
+
+因为一些用户报告了被 GFW 封锁，以及使用与维护方面的不便，Tuic v4 v5 Plugin (基于 https://github.com/EAimTY/tuic) 客户端已在 1.2.4 版本被彻底废弃。
+
+#### v5 协议 (1.2.0之后)
+
+无需插件的 TUIC，由 sing-box 实现。
+
+如果需要使用 `udp_over_stream` 一项（场景：可能对某些软件的实时UDP视频串流有帮助），请使用 sing-box 作为 TUIC 服务器。
+
+### ShadowTLS
+
+通常需要与 ShadowSocks 类型服务器组成链式代理才能上网。顺序为 ShadowTLS -> ShadowSocks
+
+sing-box ShadowTLS 与原版的兼容性未知。
+
+### sing-box 私有协议
+
+!!! warning "注意"
+
+    * 这是一些私有协议，通常随 VMess VLESS Trojan 等协议使用。
+    * 如果服务器不支持（通常是因为不是 sing-box 或者版本不同），则可能导致无法上网。
+
+按 sing-box 的出站分：
+
+* vmess/vless/trojan: `V2Ray Transport` (http/ws/grpc/quic)
+* vmess/vless: `packetaddr` `xudp`
+* ss/vmess/vless/trojan: `multiplex`
+* ss: `uot`
+
+!!! note "V2Ray Transport"
+
+    - ws 地址支持 `?ed=2048` 这种 earlydata 形式（与 Xray 兼容）
+    - HTTP GRPC 等传输层部分情况下与 v2ray xray 等服务器存在兼容性问题
+
+### TLS 安全设置
+
+* 允许不安全连接：启用后可受 MITM 攻击，这种情况下安全性相当于明文。有些节点不开这个无法使用，原因是服务器证书配置有误。
+* 证书（链）：应填入证书内容，通常是 PEM 格式。
+* 如果 SNI 留空，且 服务器地址 为域名，则使用 服务器地址 填充 SNI。(v2ray & sing-box 行为)
+* 本项目不会使用 ws host 等字段填充 SNI，这可能会使一些客户端（V2RayNG）共享的 ws tls 等配置无法使用，请自行检查。
+
+### TLS 伪装设置
+
+* uTLS
+* Reality (先决条件是开启 uTLS，不支持 SpiderX，ShortId 可留空)
+
+!!! note
+
+    * sing-box Reality 目前与 Xray-core 兼容性欠佳，建议服务器和客户端使用相同的实现。

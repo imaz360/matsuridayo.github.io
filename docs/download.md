@@ -14,13 +14,19 @@
 
 ### Matsuri
 
-项目已经存档，不再维护。
+项目已经存档，不再维护。文档由于严重过时现已删除。
 
 [下载 Matsuri](https://github.com/MatsuriDayo/Matsuri/releases)
 
-[配置说明 / Configuration](/m-configuration/)
+## 友情推荐一些客户端
 
-[常见问题 / FAQ](/m-faq/)
+> 托管配置指没有图形化的配置编辑界面，尤其是不能图形化编辑节点与路由规则，实际使用通常依赖远程的配置生成器（如机场面板）。这与 NekoBox 的使用逻辑有较大不同。
+
+电脑端 (clash meta 核心，托管配置)： `Clash Verge Rev` `FlClash`
+
+电脑端 (xray/sing-box 核心，图形配置)： `v2rayn`
+
+电脑端（sing-box 核心，托管配置）: `GUI.for.SingBox`
 
 ## 电脑
 
