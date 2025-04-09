@@ -22,17 +22,13 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 nav:
-  - 首页: index_docs.md
+  - 首页: index.md
   - 下载: download.md
-  - Matsuri-配置: m-configuration.md
-  - Matsuri-分组: m-group.md
-  - Matsuri-路由: m-route.md
-  - Matsuri-插件: m-plugin.md
-  - Matsuri-FAQ: m-faq.md
-  - Nekoray-配置: n-configuration.md
-  - Nekoray-自定义核心: n-extra_core.md
-  - Nekoray-FAQ: n-faq.md
-  - NB4A-配置: nb4a-configuration.md
-  - NB4A-路由: nb4a-route.md
-  - NB4A-FAQ: nb4a-faq.md
-  - NB4A-白话文-国内外分流: nb4a-bhw-domestic.md
+  - Android-配置: nb4a-configuration.md
+  - Android-路由: nb4a-route.md
+  - Android-FAQ: nb4a-faq.md
+  - Android-白话文-国内外分流: nb4a-bhw-domestic.md
+  - Android-插件: nb4a-plugin.md
+  - PC-配置: n-configuration.md
+  - PC-自定义核心: n-extra_core.md
+  - PC-FAQ: n-faq.md

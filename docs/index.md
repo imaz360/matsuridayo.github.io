@@ -8,17 +8,13 @@ sing-box / universal proxy toolchain for Android.
 
 [详情 / Detail](/download/#nekobox-for-android)
 
-## NekoRay / NekoBox for PC
-
-基于 Qt 的跨平台代理配置管理器 (后端 v2ray / sing-box)
-
-Qt based cross-platform GUI proxy configuration manager (backend: v2ray / sing-box)
-
-[详情 / Detail](/download/#nekoray-nekobox-for-pc)
-
 ## Google Play
 
 Google Play 上的版本是由第三方上传的含广告版本，请不要下载。
+
+## 其他
+
+Matsuri / NekoRay / NekoBox for PC 等项目已放弃维护，已归档，文档也不再更新。
 
 ## 更改记录 & 发布频道
 
@@ -57,11 +53,3 @@ XMR
 https://t.me/nekoray_group
 
 商务合作可以在群里说，随缘回复。
-
-### 推广页
-
-!!! warning ""
-
-    包含机场推荐，所有广告与本项目无关，请自行甄别。部分页面可能无法在中国国内访问，请自备梯子。
-
-https://matsuricom.pages.dev

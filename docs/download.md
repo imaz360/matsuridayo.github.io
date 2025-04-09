@@ -26,7 +26,7 @@
 
 ### NekoRay / NekoBox for PC
 
-项目缓慢更新中。
+项目已经存档，不再维护。
 
 [下载 / Download](https://github.com/MatsuriDayo/nekoray/releases)
 

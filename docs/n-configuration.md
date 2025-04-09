@@ -321,10 +321,6 @@ JSON 对象会被合并至出站 Object，请看下方例子。
 !!! note
     使用 ShadowTLS 时，如果 ShadowTLS 使用原版客户端，则无法使用链式代理连接。请自行在本地开启一个 ShadowTLS 客户端，并将 ShadowTLS 承载的协议目标地址改为 `127.0.0.1:{ShadowTLS 本地端口}`。
 
-## Hook.js
-
-(2.8+) 允许使用 javascript 在外部生成或修改某些配置，面向高级用户，详细请看[技术文档](https://github.com/MatsuriDayo/nekoray/blob/main/docs/HookJS.md)。
-
 ## 运行参数
 
 https://github.com/MatsuriDayo/nekoray/blob/main/docs/RunFlags.md

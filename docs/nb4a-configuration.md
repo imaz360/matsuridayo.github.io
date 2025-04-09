@@ -10,7 +10,20 @@
 
 需要先保存服务器。否则点击右上角菜单无反应。
 
-参考[这里的说明](/n-configuration/#json)
+自定义配置将被混合进最终的 core 配置。
+
+从 1.3.3 版本起，可以使用以下格式处理列表：
+
+```json
+{
+    "+inbounds": [
+        // 向 inbounds 的头部添加您的对象
+    ],
+    "outbounds+": [
+        // 向 outbounds 的尾部添加您的对象
+    ]
+}
+```
 
 ### 自定义配置
 
@@ -30,10 +43,9 @@
 
 部分情况下与 v2ray 等服务器存在兼容性问题。
 
-* 截至 2023 年 6 月 sing-box HTTP 出站未支持 HTTP/2 CONNECT (HTTP+TLS) 代理，此类代理无法使用（表现为 EOF 错误）
-* 截至 2023 年 6 月 sing-box 未支持 v2ray "TCP Header 伪装 HTTP" (VMESS+TCP+HTTP+TLS) 类型代理，此类代理无法使用（表现为 EOF 错误）
-
 ### VMess
+
+部分情况下与 v2ray 等服务器存在兼容性问题。
 
 * 对于像 ALPN 这样的列表选项，格式是每行一个。1.1.7 版本后也可以用 `,` 分割。
 
@@ -46,7 +58,7 @@
 
 对于 sing-box 不支持的类型(比如 wechat-video)，需要安装 Matsuri Hysteria 插件 1.3.3+
 
-#### 多端口 / 端口跳跃
+#### 端口跳跃
 
 1. (1.2.0之前的旧格式) 需要使用多端口时，「服务器」按照 `example.com:1145,5144-10240` 格式填写，「服务器端口」随意填写。
 2. (1.2.0新格式) 服务器和端口分开填写，端口可以填写字符串，格式： `11451`（单端口）/  `114-514,1919`（多端口）。旧配置自动升级，但不可再写旧的格式。
@@ -55,7 +67,7 @@
 
 ### Hysteria2
 
-Hysteria2 使用 sing-box 内置实现，暂不支持使用端口跳跃。
+Hysteria2 使用 sing-box 内置实现。
 
 ### TUIC
 
@@ -63,7 +75,7 @@ Hysteria2 使用 sing-box 内置实现，暂不支持使用端口跳跃。
 
 #### v5 协议 (1.2.0之后)
 
-1.2.0+ 支持无需插件的 TUIC，由 sing-box 实现。
+无需插件的 TUIC，由 sing-box 实现。
 
 如果需要使用 `udp_over_stream` 一项（场景：可能对某些软件的实时UDP视频串流有帮助），请使用 sing-box 作为 TUIC 服务器。
 
@@ -93,10 +105,6 @@ sing-box ShadowTLS 与原版的兼容性未知。
 
 ### TLS 安全设置
 
-!!! note "封锁提示"
-
-    2022 年 10 月开始，TLS Tunnel 易受封锁。
-
 * 允许不安全连接：启用后安全性相当于明文。有些节点不开这个无法使用，原因是服务器证书配置有误。
 * 证书（链）：应填入证书内容，通常是 PEM 格式。
 * 如果 SNI 留空，且 服务器地址 为域名，则使用 服务器地址 填充 SNI。(v2ray & sing-box 行为)
@@ -117,20 +125,20 @@ sing-box ShadowTLS 与原版的兼容性未知。
 
 NekoBox for Android 支持的格式:
 
-- 「Clash格式」一般带有流量信息，本项目支持解析其节点（推荐使用）
-- 「Clash Meta格式」 VLESS & Hysteria & TUIC（NB4A 1.1.4+ 支持，推荐使用）
-- 「V2rayN格式」一般不带流量信息，本项目支持解析
-- 「Shadowsocks格式」本项目支持解析
+- 「Clash Meta格式」多种协议，带有流量信息（推荐使用）
+- 「V2rayN格式」
+- 「Shadowsocks格式」
+- 「Sing-box格式」 1.3.8 版本以后可以解析出站节点
 - 一些通用的分享链接及其 Base64 编码后的格式
 
 NekoBox for Android 不支持的格式：
 
-- 「某些苹果应用自创的格式」
 - 「SSR格式」
 - 「SIP008/OOCv1」
+- 「Clash格式」部分旧版写法已不支持解析
+- 一些苹果应用自创的格式
+- 一些过时订阅转换器生成的错误格式
 - 各种较少使用/不标准的格式
-
-另见 [分组和订阅](/m-group/)
 
 #### 导入
 
@@ -183,12 +191,6 @@ vmess vless trojan 的分享链接非常混乱，在 NekoBox for Andoird 0.7+，
 - 目前可以为 vmess vless trojan shadowsocks 等协议启用 multiplex
 - 是否能用取决于服务端，请以节点实际为准。若服务端不支持 multiplex（约等于不是 sing-box），则开启后无法上网。
 
-#### padding
-
-(1.1.5)+ 客户端开启 padding 可以缓解 TLS in TLS 包长度分布特征。
-
-请在 mux 协议中勾选 `padding` 一项，服务器版本要求 sing-box 1.3.0+
-
 ### 分应用代理 / 路由
 
 分应用代理仅对 VPN 模式生效。此功能决定某应用的流量是否会由 NekoBox VPN 处理，而「路由」功能决定 NekoBox 如何处理。
@@ -206,11 +208,6 @@ LineageOS 等系统的 VPN 热点功能与前者冲突，需要开启后者。
 可以使用的 DNS 服务器类型请参考[这里](https://sing-box.sagernet.org/configuration/dns/server/#address) （DHCP & FakeIP 除外）
 
 详细的 DNS 配置说明请看 [路由与 DNS](/nb4a-route/)
-
-!!! note
-
-    * 直连 DNS 建议填写 `local` 使用本机的 DNS（一般由运营商提供），如果有问题再换其他 DNS 服务器。[支持的 DNS 服务器类型](https://sing-box.sagernet.org/zh/configuration/dns/server/#address)
-    * For some Iran users, you may consider prefer using DoH instead of local DNS, because of the DNS poisoning & MITM attack.
 
 #### FakeDns
 
@@ -252,12 +249,18 @@ LineageOS 等系统的 VPN 热点功能与前者冲突，需要开启后者。
 
 ### 分组配置: selector 模式
 
+**不再维护的功能**
+
 伪 clash selector 模式，主要优点实现是分组内免重载切换配置。
 
 * 开启时，出站的 tag 将生成人类可读的名字。
 * 不建议为包含 **需要插件的服务器** 的分组启用，因为这样会一次性启动所有插件。
 * 切换节点时会重置连接，但不会清除旧的 DNS 记录，在节点物理距离过大时可能会影响访问速度。
 * 开启时，"重启代理" 按钮无效。
+
+### 高级插件
+
+**不再维护的功能**，于 1.3.9 移除。
 
 ### Root CA 侧加载
 
@@ -279,20 +282,3 @@ LineageOS 等系统的 VPN 热点功能与前者冲突，需要开启后者。
 检测结果仅供参考，结果可能因网络丢包等原因不准确。
 
 Windows 电脑上可以使用此软件进行 NAT 类型测试： https://github.com/HMBSbige/NatTypeTester
-
-### 自定义配置
-
-自定义配置将被混合进最终的 core 配置。
-
-从 1.3.3 版本起，可以使用以下格式处理列表：
-
-```json
-{
-    "+inbounds": [
-        // 向 inbounds 的头部添加您的对象
-    ],
-    "outbounds+": [
-        // 向 outbounds 的尾部添加您的对象
-    ]
-}
-```

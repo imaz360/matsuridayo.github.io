@@ -1,4 +1,4 @@
-# Matsuri & NB4A 插件
+# NekoBox Android 插件
 
 Github Plugin 仓库
 
@@ -6,7 +6,7 @@ Github Plugin 仓库
 
 !!! warning ""
 
-    **由于插件需要执行代码，所以建议从信任的渠道下载任何插件（包括插件和高级插件）**
+    **由于插件需要执行代码，所以建议从信任的渠道下载任何插件**
 
 ## 插件
 
@@ -14,9 +14,15 @@ Github Plugin 仓库
 
 用法：为你需要的协议安装插件。已安装的插件在「关于」页面显示。
 
+### 高级插件
+
+**不再维护的功能**，于 1.3.9 移除。
+
 ### 可以使用的插件
 
 `moe.matsuri.exe.*`
+
+`io.nekohasekai.sagernet.plugin.*`
 
 - [Naive Plugin](https://github.com/klzgrad/naiveproxy/releases)
 - [Hysteria Plugin](https://github.com/MatsuriDayo/plugins/releases?q=Hysteria)
