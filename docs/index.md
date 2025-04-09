@@ -6,7 +6,7 @@
 
 sing-box / universal proxy toolchain for Android.
 
-[详情 / Detail](/download/#nekobox-for-android)
+[下载 / Download](/download/)
 
 ## Google Play
 
